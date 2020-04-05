@@ -1,0 +1,58 @@
+创建dev 分支，然后切换到dev分支
+	git switch -c dev
+	git chectout -b dev
+相当于下面两条命令
+	创建分支
+	git branch dev
+	切换分支
+	git switch dev
+	git chectout dev
+
+查看当前分支
+	git branch
+
+把dev分支的工作成果合并到master分支上：这次合并是“快进模式”，也就是直接把master指向dev的当前提交，所以合并速度非常快。
+	git merge dev
+
+通常，合并分支时，如果可能，Git会用Fastforward模式，但这种模式下，删除分支后，会丢掉分支信息。
+合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并
+	git merge --no--ff -m "add merge" dev
+
+删除dev分支
+	git branch -d dev
+强行删dev分支
+	git branch -D dev
+
+当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
+解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。
+用
+
+命令可以看到分支合并图。
+	git log --graph
+
+
+并不是你不想提交，而是工作只进行到一半，还没法提交，预计完成还需1天时间。但是，必须在两个小时内修复该bug，怎么办？
+幸好，Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：
+
+保存工作区
+	git stash
+查看工作区
+	git stash list
+恢复工作区
+	git stash pop	恢复的同时stash内容也删除了	
+		git stash apply 恢复后stash 内容不删除，
+		git stash drop  来删除
+
+（假设bug在master分支上）
+保存工作现场后，用 git switch master 切换到master分支上，在maste分支创建一个新的临时分支 git branch issue-1，到临时分支上修复bug，然后切换到master
+完成合并，最后删除临时分支 git branch -d issue-1
+
+
+复制一个特定的提交到当前分支
+	git cherry-pick commit-id（4c805e2）
+
+
+把分叉的提交历史“整理”成一条直线
+	git rebase
+查看效果
+	git log

@@ -1,0 +1,4 @@
+异步：async asyncio  drain()  aiohttp(基于asyncio的http的框架)
+
+
+课程：python 基础 ：变量 判断，循环语句

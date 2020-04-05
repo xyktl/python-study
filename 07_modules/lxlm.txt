@@ -1,0 +1,43 @@
+https://www.cnblogs.com/zhangxinqi/p/9210211.html
+
+表达式	描述
+nodename	选取此节点的所有子节点
+/	从当前节点选取直接子节点
+//	从当前节点选取子孙节点
+.	选取当前节点
+..	选取当前节点的父节点
+@	选取属性
+*	通配符，选择所有元素节点与元素名
+@*	选取所有属性
+[@attrib]	选取具有给定属性的所有元素
+[@attrib='value']	选取给定属性具有给定值的所有元素
+[tag]	选取所有具有指定元素的直接子节点
+[tag='text']	选取所有具有指定元素并且文本内容是text节点
+
+
+ lxml是python的一个解析库，支持HTML和XML的解析，支持XPath解析方式，而且解析效率非常高
+
+XPath，全称XML Path Language，即XML路径语言，它是一门在XML文档中查找信息的语言，它最初是用来搜寻XML文档的，但是它同样适用于HTML文档的搜索
+
+XPath的选择功能十分强大，它提供了非常简明的路径选择表达式，另外，它还提供了超过100个内建函数，用于字符串、数值、时间的匹配以及节点、序列的处理等，几乎所有我们想要定位的节点，都可以用XPath来选择
+
+
+
+
+# -*- coding: utf-8 -*-
+from lxml import etree
+
+text='''
+<div>
+    <ul>
+         <li class="item-0"><a href="link1.html">第一个</a></li>
+         <li class="item-1"><a href="link2.html">second item</a></li>
+         <li class="item-0"><a href="link5.html">a属性</a>
+     </ul>
+ </div>
+'''
+html=etree.HTML(text) #初始化生成一个XPath解析对象
+result=etree.tostring(html,encoding='utf-8')   #解析对象输出代码
+print(type(html))
+print(type(result))
+print(result.decode('utf-8'))

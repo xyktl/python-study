@@ -1,0 +1,17 @@
+远程连接服务器：  cmd:mstsc
+远程连接身份认证错误（密码正确）：
+	解决1：cmd：gpedit.msc  打开本地组策略编辑器
+			点击 管理模板
+			点击 系统
+			点击 凭据分配
+			点击 点击加密 oracle 修正
+			启用
+	解决2（如果1不行）：cmd gedit 打开注册表编辑器
+						选择  计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\
+						新建  在system下新建 CredSSP\Parameters
+						添加  名称：AllowEncryptionOracle  类型 RWORD（32） 值：2
+远程连接阿里的服务器做实验
+
+上午：做小项目：21点小游戏
+下午：小试验:文件批量重命名
+apsara clouder 认证 第一次考试

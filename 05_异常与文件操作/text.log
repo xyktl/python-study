@@ -1,0 +1,12 @@
+is info
+is warning
+is error
+is critical
+2019-09-26 11:17:20,001-INFO-is info
+2019-09-26 11:17:20,001-WARNING-is warning
+2019-09-26 11:17:20,001-ERROR-is error
+2019-09-26 11:17:20,002-CRITICAL-is critical
+2019-10-22 10:51:45,951-INFO-is info
+2019-10-22 10:51:45,951-WARNING-is warning
+2019-10-22 10:51:45,952-ERROR-is error
+2019-10-22 10:51:45,952-CRITICAL-is critical

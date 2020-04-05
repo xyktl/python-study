@@ -1,0 +1,7 @@
+file_read = open("Readme","a")
+file_read = open("Readme")
+file_write = open("Readme[复制]","w")
+text = file_read.read()
+file_write.write(text)
+file_read.close()
+file_write.close()

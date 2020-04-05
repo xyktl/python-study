@@ -1,0 +1,94 @@
+bubbling sort   冒泡排序
+code	编码
+gists	要旨
+issues	问题
+repository	库
+branch	分支
+initialize	初始化
+modified	改进的
+distributed	分布式的
+merge		合并
+undo   撤销
+redo  重做
+unstaged change 未声明的变化
+remote  远程
+conflicts 冲突
+ORM (Object Relational Mapping)  对象关系映射  ：是通过使用描述对象和数据库之间映射的元				数据，将面向对象语言程序中的对象自动持久化到关系数据库中
+
+metaclass  元类
+
+comprehension 推导式
+assignment  分配
+CSV :Comma-Separated Values  逗号分隔值,有时也称为字符分隔值，因为分隔字符也可以不是逗			号其文件以纯文本形式存储表格数据（数字和文本）。纯文本意味着该文件是一个字符			序列，不含必须像二进制数字那样被解读的数据。
+
+seed 种子
+parameters  参数
+accuracy	准确性
+terminal	终端
+
+reference	赋值
+assignment  分配 ，引用
+scale    刻度，比例
+horizontal 水平
+tickinterval 时间间隔
+orient	方向
+radio button 单选按钮
+geometry	几何
+privilege	特权
+distributed	分布
+tutorial 辅导
+indices 指数
+embedded	嵌入式
+platform	平台
+content	内容
+FAQs	常见问题
+reference manual	参照说明书
+component	组件
+extensive	大量的
+obtain	获得
+algorithm	算法
+abstraction	抽象
+ecapsulation	封装
+callable	可调用对象
+element		元素
+simulation	模拟
+remain	剩余
+timestamp	时间戳
+templates 模板
+strip 	剥夺
+navbar	导航栏
+magration	迁移
+traversal	遍历
+mirror		镜像
+scanner	扫描
+inspection	检查
+partition 	分区
+terminate	结束
+
+SDK （Software Development Kit） 软件开发工具包
+PAI (Personal Application Integration，个人应用集成) 
+
+tunnel  隧道
+plugins 插件
+constraint 约束
+refrences	参考
+genericity	泛型
+inteval	 间隔
+merge	合并
+cardinal	基数
+callable	调用
+axis	轴
+category	种类
+validation	确认
+embebed		嵌套
+palette	调色板
+humidity	湿度
+extract 	取出
+batch		一批
+
+classification  分类
+regression		回归
+clustering		聚类
+dimensionality	reduction  降维
+
+

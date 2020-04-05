@@ -1,0 +1,202 @@
+ https://www.runoob.com/mysql/mysql-join.html
+
+ 创建数据库
+ mysqladmin -u root -p create RUNOOB
+
+ 登陆
+ mysql -u root -p
+
+ 修改密码
+
+mysqladmin -u用户名 -p旧密码 password 新密码
+
+
+
+
+sql 语言可以分为三类：
+
+DDL：Data Definition Language ：数据定义语言  create table
+
+
+DML：Data   ：数据操作语言
+
+DQL：数据查询语言  select
+
+
+
+use chenliang;   :使用数据库
+create table if not exists xyktl(id int primary key,name varchar(100),sex varchar(100)); 创建表xyktl
+show tables;  显示所有表
+desc xyktl； 查看表xyktl 的内容
+
+表的每一行称为记录（Record），记录是一个逻辑意义上的数据。
+表的每一列称为字段（Column），同一个表的每一行记录都拥有相同的若干字段。
+在关系数据库中，一张表中的每一行数据被称为一条记录。一条记录就是由多个字段组成的
+
+--修改表的编码为utf8
+alter table store_warehouse convert to character set utf8;
+
+--查看表中每个字段的字符集
+show full fields from store_warehouse;
+
+ 
+主键：记录唯一的不重复的记录，主键也不应该允许NULL
+	所以，选取主键的一个基本原则是：不使用任何业务相关的字段作为主键。
+	因此，身份证号、手机号、邮箱地址这些看上去可以唯一的字段，均不可用作主键。
+	作为主键最好是完全业务无关的字段，我们一般把这个字段命名为id。常见的可作为id字段的类型有：
+
+	id bigint not null auto-icrement
+
+外键：
+	一对一
+	外键并不是通过列名实现的，而是通过定义外键约束实现的：
+
+	ALTER TABLE students
+	ADD CONSTRAINT fk_class_id 			//constarint  约束
+	FOREIGN KEY (class_id)			//foreign
+	REFERENCES classes (id);    //refrences  	参考
+	其中，外键约束的名称fk_class_id可以任意，FOREIGN KEY (class_id)指定了class_id作为外键，REFERENCES classes (id)指定了这个外键将关联到classes表的id列（即classes表的主键）。
+
+	通过定义外键约束，关系数据库可以保证无法插入无效的数据。即如果classes表不存在id=99的记录，students表就无法插入class_id=99的记录。
+
+	由于外键约束会降低数据库的性能，大部分互联网应用程序为了追求速度，并不设置外键约束，而是仅靠应用程序自身来保证逻辑的正确性。这种情况下，class_id仅仅是一个普通的列，只是它起到了外键的作用而已。
+
+	要删除一个外键约束，也是通过ALTER TABLE实现的：
+
+	ALTER TABLE students
+	DROP FOREIGN KEY fk_class_id;
+	注意：删除外键约束并没有删除外键这一列。删除列是通过DROP COLUMN ...实现的。 
+
+插入语句
+ insert into emoloyee (empid,name ,sex,title,birthday,depid) values("1011","张三","男","高级工程师","1975-1-1","111"), ("1012","李四","女","助工","1975-1-1","222"), ("1013","王五","男","工程师","1975-1-1","333"), ("1014","赵六","男","工程师","1975-1-1","444");
+
+查询格式
+SELECT column_name,column_name
+FROM table_name
+[WHERE Clause]
+[LIMIT N][ OFFSET M]
+查询语句中你可以使用一个或者多个表，表之间使用逗号(,)分割，并使用WHERE语句来设定查询条件。
+SELECT 命令可以读取一条或者多条记录。
+你可以使用星号（*）来代替其他字段，SELECT语句会返回表的所有字段数据
+你可以使用 WHERE 语句来包含任何条件。
+你可以使用 LIMIT 属性来设定返回的记录数。
+你可以通过OFFSET指定SELECT语句开始查询的数据偏移量。默认情况下偏移量为0。
+
+
+select
+MySQL 的 WHERE 子句的字符串比较是不区分大小写的。 你可以使用 BINARY 关键字来设定 WHERE 子句的字符串比较是区分大小写的。
+
+	 ：SELECT * from runoob_tbl WHERE BINARY runoob_author='runoob.com';
+
+
+update
+UPDATE table_name SET field1=new-value1, field2=new-value2
+[WHERE Clause]
+
+	： UPDATE runoob_tbl SET runoob_title='学习 C++' WHERE runoob_id=3;
+
+
+delete：
+	DELETE FROM table_name [WHERE Clause]
+
+	DELETE FROM runoob_tbl WHERE runoob_id=3;
+
+like:
+	SELECT * from runoob_tbl  WHERE runoob_author LIKE '%COM';
+
+将不同表中的查询数据集合到一个表中展示出来：
+	UNION 语句：用于将不同表中相同列中查询的数据展示出来；（不包括重复数据）
+	UNION ALL 语句：用于将不同表中相同列中查询的数据展示出来；（包括重复数据）
+
+	使用形式如下：
+
+	SELECT 列名称 FROM 表名称 UNION SELECT 列名称 FROM 表名称 ORDER BY 列名称；
+	SELECT 列名称 FROM 表名称 UNION ALL SELECT 列名称 FROM 表名称 ORDER BY 列名称；
+
+	SELECT country FROM Websites
+	UNION
+	SELECT country FROM apps
+	ORDER BY country;
+
+
+	SELECT country FROM Websites
+	UNION ALL
+	SELECT country FROM apps
+	ORDER BY country;
+
+
+order by :将查询的结果排序
+	你可以使用任何字段来作为排序的条件，从而返回排序后的查询结果。
+	你可以设定多个字段来排序。
+	你可以使用 ASC 或 DESC 关键字来设置查询结果是按升序或降序排列。 默认情况下，它是按升序排列。
+	你可以添加 WHERE...LIKE 子句来设置条件。
+
+
+	SELECT * from runoob_tbl ORDER BY submission_date ASC;   //按列submission_date 升序排列
+	SELECT * from runoob_tbl ORDER BY submission_date DESC; //降序排列
+
+group by:分组
+	SELECT name, COUNT(*) FROM   employee_tbl GROUP BY name; //按照名字分组，并统计名字出现的次数 用count统计
+
+gorup by   name  with rollup   :在统计名字的基础上可以再统计别的列（SUM 总数,AVG 平均数,COUNT 次数）
+	 SELECT name, SUM(singin) as singin_count FROM  employee_tbl GROUP BY name WITH ROLLUP;
+
+
+join：
+	JOIN 按照功能大致分为如下三类：
+
+	INNER JOIN（内连接,或等值连接）：获取两个表中字段匹配关系的记录。
+	LEFT JOIN（左连接）：获取左表所有记录，即使右表没有对应匹配的记录。
+	RIGHT JOIN（右连接）： 与 LEFT JOIN 相反，用于获取右表所有记录，即使左表没有对应匹配的记录。
+	FULL OUTER JOIN 则是选出左右表都存在的记录：
+		选出所有学生，同时返回班级名称
+
+		SELECT s.id, s.name, s.class_id, c.name class_name, s.gender, s.score
+		FROM students s
+		INNER JOIN classes c
+		ON s.class_id = c.id;
+
+
+
+
+
+
+
+
+MySQL 元数据：
+	你可能想知道MySQL以下三种信息：
+
+	查询结果信息： SELECT, UPDATE 或 DELETE语句影响的记录数。
+	数据库和数据表的信息： 包含了数据库及数据表的结构信息。
+	MySQL服务器信息： 包含了数据库服务器的当前状态，版本号等。
+
+	获取服务器元数据
+	以下命令语句可以在 MySQL 的命令提示符使用，也可以在脚本中 使用，如PHP脚本。
+
+	命令	描述
+	SELECT VERSION( )	服务器版本信息
+	SELECT DATABASE( )	当前数据库名 (或者返回空)
+	SELECT USER( )	当前用户名
+	SHOW STATUS	服务器状态
+	SHOW VARIABLES	服务器配置变量
+
+alter:更新表的结构（添加或减少列）
+
+	如果要经常根据score列进行查询，就可以对score列创建索引：
+
+	ALTER TABLE students
+	ADD INDEX idx_score (score);
+	使用ADD INDEX idx_score (score)就创建了一个名称为idx_score，使用列score的索引。索引名称是任意的，索引如果有多列，可以在括号里依次写上，例如：
+
+	ALTER TABLE students
+	ADD INDEX idx_name_score (name, score);
+
+	alter table ts01 rename to ts01_new;  //改表名
+	alter table test rename test1; --修改表名
+
+	alter table test add  column name varchar(10); --添加表列
+	alter table test drop  column name; --删除表列
+	alter table test modify address char(10) --修改表列类型
+	alter table test change address address  char(40)
+	alter table test change  column address address1 varchar(30)--修改表列名
+

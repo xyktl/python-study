@@ -1,0 +1,22 @@
+python 数据科学分析实战
+
+1.足球运动员分析 
+				选定工具 ，收集数据（网络爬虫 web crawler），数据分析 统计 ， 项目实现  
+2，fecebook 营销组合分类
+				选定工具，收集数据，确定算法，算法实现
+
+
+
+
+所用库：
+
+numpy (numerical python):实验数据的矢量化运算（最基本的库，其他库都是在它的基础上的）  
+pandas （ ）对数据进行去重，分析
+scipy （）数据计算功能
+matpiotlib 数据可视化
+ipython
+sympy
+scilit-learn 机器学习库
+
+
+

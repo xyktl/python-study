@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "C:\Users\Hasse\Desktop\py project\05_异常与文件操作\logging.py", line 6, in <module>
+    print(30 / 0)
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "C:\Users\Hasse\Desktop\py project\05_异常与文件操作\logging.py", line 6, in <module>
+    print(30 / 0)
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "C:\Users\Hasse\Desktop\py project\05_异常与文件操作\exc_实现.py", line 6, in <module>
+    print(30 / 0)
+ZeroDivisionError: division by zero

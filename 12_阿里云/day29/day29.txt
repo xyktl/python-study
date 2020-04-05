@@ -1,0 +1,5 @@
+numpy
+
+jupyter 快捷键 ctrl+enter  运行本代码段
+				shift+enter	运行本段代码并开辟新的代码段
+

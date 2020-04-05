@@ -1,0 +1,33 @@
+连接远程库 learngit
+	git remote add origin git@github.com:xyktl/learngit.git
+
+将本地更新推送到 库learngit 的master 分支上
+更新了之后添加 再 提交事务
+	git add file
+	git commit -m "描述"
+	git push origin master
+	git push origin master -f 强制推送，会覆盖库
+
+
+从远程库克隆到本地
+	git clone  git@github.com:xyktl/learngit.git
+
+
+推送时可能会推动不上去，因为最新提交的和是试图推送的提交有冲突，
+先用git pull把最新的提交从origin/dev抓下来，然后，在本地合并，解决冲突，再推送：
+
+1.把最新的提交origin/dev 抓下来
+	git pull
+
+git pull也失败了，原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，
+
+2.设置dev和origin/dev的链接
+	git branch --set-upstream-to=origin/dev dev
+3.再pull
+	git pull
+
+查看远程库信息
+	git remote -v
+
+码云：5人以下小团队免费
+	gitee.com

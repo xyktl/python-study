@@ -1,0 +1,28 @@
+
+做实验：-利用机器学习平台完成预测算法
+大数据计算服务（MaxCompyte）:是一种快速，完全托管的 TB/PB 级数据仓库解决方案
+
+	项目空间（project）：是MaxCompute 的基本组织单元，类似于传统数据库 Database 或 Scheme 的概念
+			项目空间中包括：表（Table）,资源（Resourcce），函数（Funtion），实例（Instance）
+
+				Table：是MaxCompute 的数据存储单元
+					内部表：所有的数据都存储在MaxCompute 中
+					外部表：
+				分区（partition）：表相当于目录，分区就是子目录
+
+				数据类型：Bigint，String，Boolean，Double，Datetime，Decimal
+				资源类型：
+						FIle 类型；
+						Table 类型：MaxCompute 中的表
+						Jar 类型：编译好的Java Jar 包
+						Archive 类型：通过资源名称中的后缀识别压缩类型，支持的压缩类型包括：.zip/.tgz/.tar.gz/.tar/jar
+
+				函数：用户可以在 MaxCompute SQL 使用内建函数完成一定的计算和计数功能：
+					UDF:User Defined Function 自定义函数
+
+				task：是MaxCompute 的基本计算单元，SQL 和 MapReduce 功能都是通过任务完成的
+					工作流WorkFlow：是个有向无环图，描述各个Task 之间的依赖关系和约束
+				作业job：由一个或者多个Task 以及表示其执行次序关系的工作流WorkFlow 组成
+
+				MapReduce：最早是分布式数据处理模型： MaxComputer 为用户提供java编程接口
+

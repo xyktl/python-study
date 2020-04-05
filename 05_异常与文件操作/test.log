@@ -1,0 +1,15 @@
+26-38-2019 10:38:27 root:ERROR:Exception occurred
+Traceback (most recent call last):
+  File "C:\Users\Hasse\Desktop\py project\05_异常与文件操作\log.py", line 40, in <module>
+    c = a / b
+ZeroDivisionError: division by zero
+26-38-2019 10:38:27 root:ERROR:Exception occurred
+Traceback (most recent call last):
+  File "C:\Users\Hasse\Desktop\py project\05_异常与文件操作\log.py", line 40, in <module>
+    c = a / b
+ZeroDivisionError: division by zero
+26-38-2019 10:38:27 root:DEBUG:Exception occurred
+Traceback (most recent call last):
+  File "C:\Users\Hasse\Desktop\py project\05_异常与文件操作\log.py", line 40, in <module>
+    c = a / b
+ZeroDivisionError: division by zero

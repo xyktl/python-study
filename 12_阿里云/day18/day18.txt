@@ -1,0 +1,3 @@
+Analytic DB  分析型数据库
+
+做实验：Analytic DB  的DDL操作
